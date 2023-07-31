@@ -1,0 +1,129 @@
+body {
+    font-size: 13px;
+}
+
+a {
+    font-weight: normal;
+    color: #6f6f6f;
+}
+
+a:hover{
+    color: #F28B4A;
+}
+
+p
+{
+    font-size: 14px;
+}
+
+.titulo {
+    color: #F28B4A;
+}
+
+.card-header
+{
+    background-color: #fac8a9;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.sidebar a:hover {
+    /* Estilos para el hover del enlace en la sidebar */
+    /* Por ejemplo, cambiar el color de fondo y el color del texto */
+    background-color: #eaeaea;
+    color: #F28B4A;
+}
+
+/* Sweealert */
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+    background-color: #F28B4A;
+    color: #fff;
+}
+
+.nav-link.hover {
+    color: red;
+}
+
+.content-wrapper {
+    background-color: #ffffff;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #F28B4A;
+}
+
+.nav-pills .nav-link.hover {
+    color: #F28B4A;
+}
+
+.card {
+    border-radius: .5rem;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #F28B4A;
+    border-color: #F28B4A;
+}
+
+/* Seleccionar todos los botones del tipo "button" */
+button[type="button"],
+/* Seleccionar todos los botones del tipo "submit" */
+input[type="submit"] {
+    padding: 5px 15px 5px 15px;
+    border-radius: 1em;
+    font-size: 14px;
+}
+
+.btn-magic {
+    padding: 5px 15px 5px 15px;
+    color: #fff;
+    background-color: #f07e37;
+    border-radius: 1em;
+    font-size: 14px;
+}
+
+.modal-header {
+    background-color: #F28B4A;
+    color: #353535;
+}
+
+.modal-footer {
+    background-color: #efefef;
+}
+
+.btn-magic:hover {
+    background-color: #f9a875;
+}
+
+.form-control {
+    height: calc(2rem + 2px);
+    font-size: 13px;
+    border-radius: .5rem;
+}
+
+input[type="text"]:focus {
+    border-color: #feb98d; /* Puedes cambiar "red" por el color que prefieras */
+    /* Otros estilos opcionales */
+    outline: none; /* Esto elimina el contorno por defecto al enfocar el input en algunos navegadores */
+    /*box-shadow: 0 0 5px red;*/ /* Puedes agregar una sombra alrededor del input para destacarlo más */
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: normal;
+}
+
+
+/* Full Calendar */
+.fc-event-main {
+    font-size: 14px;
+    background-color: #F28B4A;
+    border: 0px solid #F28B4A;
+    padding: 2em;
+}
+
+.fc-timegrid-event {
+    border: 0px;
+}
