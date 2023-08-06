@@ -11,6 +11,20 @@ $(document).ready(function () {
         ajaxUpdate(this);
     });
 
+    (function($){
+
+        //$('#start_date').val(new Date());
+
+        $('#start_date').inputmask("datetime",{
+            mask: "1-2-y h:s",
+            placeholder: "dd-mm-yyyy hh:mm",
+            leapday: "-02-29",
+            separator: "-",
+            alias: "dd/mm/yyyy"
+        });
+
+    })(jQuery)
+
 });
 
 function nuevoCita()
@@ -165,21 +179,22 @@ function editarCita(id) {
     {
         $('#btnActualizar').prop("disabled", false);
         $('#ec_ficha_id').val(data.ficha.id);
+        $('#ec_dni').val(data.ficha.paciente.dni);
         $('#ec_paciente').val(data.ficha.paciente.nombres+' '+data.ficha.paciente.ape_paterno+' '+data.ficha.paciente.ape_materno);
-        $('#ec_fecha').val(data.ficha.fecha);
+        $('#ec_start_date').val(data.ficha.start_date);
         $('#ec_tipo_servicio').val(data.ficha.tipo_servicio);
         $('#ec_motivo_consulta').val(data.ficha.motivo_consulta);
         $('#ec_tipo_cita').val(data.ficha.tipo_cita);
         $('#ec_cita_status').val(data.ficha.cita_status);
 
         if (data) {
-            $('#ec_hora_id').empty();
+            /*$('#ec_hora_id').empty();
             $('#ec_hora_id').append('<option value="">-- Seleccione --</option>');
 
             $.each(data.horarios, function(llave, valor) {
                 var sel = (data.ficha.hora_id === valor.id) ? 'selected': '';
                 $('select[name="ec_hora_id"]').append('<option value="'+ valor.id +'" '+ sel +'>' + valor.hora + '</option>');
-            });
+            });*/
 
             $.each(data.consultorios, function(llave, valor) {
                 var sel = (data.ficha.consultorio_id === valor.id) ? 'selected': '';

@@ -22,7 +22,9 @@ class Cita extends Model
         'podologa_id',
         'user_id',
         'forma_pago',
-        'proxima_cita'
+        'proxima_cita',
+        'start_date',
+        'end_date',
     ];
 
     public function paciente()

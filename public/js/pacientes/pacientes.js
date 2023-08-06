@@ -72,6 +72,8 @@ function ajaxStore(form) {
             }
         }
         $("#frmNuevoPaciente")[0].reset();
+        $('#mdlNuevoPaciente').modal('hide');
+        $('#tblPacientes').DataTable().ajax.reload();
 
     })
     .fail(function(jqXHR, ajaxOptions, thrownError)
