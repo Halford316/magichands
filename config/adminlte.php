@@ -332,8 +332,7 @@ return [
         ],
         [
             'text' => 'Consultorios',
-            'url'  => '#',
-            //'route'  => 'pacientes.index',
+            'route'  => 'consultorios.index',
             'icon' => 'fas fa-fw fa-building fa-lg mr-1',
         ],
         [
@@ -354,8 +353,7 @@ return [
         ],
         [
             'text' => 'Productos',
-            'url'  => '#',
-            //'route'  => 'pacientes.index',
+            'route'  => 'productos.index',
             'icon' => 'fas fa-fw fa-medkit fa-lg mr-1',
         ],
         [

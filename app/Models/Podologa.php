@@ -13,7 +13,7 @@ class Podologa extends Model
         'tipo_contrato',
         'ape_paterno',
         'ape_materno',
-        'ape_nombres',
+        'nombres',
         'dni',
         'telefono',
         'email',

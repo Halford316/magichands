@@ -19,7 +19,7 @@ class CreatePodologasTable extends Migration
             $table->enum('tipo_contrato', ['planilla', 'destajo']);
             $table->string('ape_paterno');
             $table->string('ape_materno');
-            $table->string('ape_nombres');
+            $table->string('nombres');
             $table->string('dni', 20);
             $table->string('telefono', 50)->nullable();
             $table->string('email', 100)->nullable();

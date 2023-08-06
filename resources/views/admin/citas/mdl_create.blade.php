@@ -45,11 +45,11 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-3">
-                                <label for="fecha">Fecha</label>
-                                <input type="date" name="fecha" id="fecha" class="form-control" required>
+                                <label for="start_date">Fecha</label>
+                                <input type="text" name="start_date" id="start_date" class="form-control" required>
                             </div>
 
-                            <div class="col-sm-2">
+                            {{--<div class="col-sm-2">
                                 <label for="hora_id">Hora</label>
                                 <select name="hora_id" id="hora_id" class="form-control" required>
                                     <option value="">-- Seleccione --</option>
@@ -57,7 +57,7 @@
                                         <option value="{{ $horario->id }}">{{ $horario->hora }}</option>
                                     @endforeach
                                 </select>
-                            </div>
+                            </div>--}}
 
                             <div class="col-sm-2">
                                 <label for="consultorio_id">Consultorio</label>

@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\CitaController;
+use App\Http\Controllers\ConsultorioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\PodologaController;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -81,6 +83,28 @@ Route::middleware('auth')->group(function () {
             Route::post('/store-process', [PodologaController::class, 'store']);
             Route::get('/show/{ficha}', [PodologaController::class, 'show']);
             Route::put('/update-process', [PodologaController::class, 'update']);
+
+        });
+
+        /** Consultorios */
+        Route::prefix('consultorios')->group(function () {
+
+            Route::get('', [ConsultorioController::class, 'index'])->name('consultorios.index');
+            Route::post('/datatable', [ConsultorioController::class, 'datatable']);
+            Route::post('/store-process', [ConsultorioController::class, 'store']);
+            Route::get('/show/{ficha}', [ConsultorioController::class, 'show']);
+            Route::put('/update-process', [ConsultorioController::class, 'update']);
+
+        });
+
+        /** Productos */
+        Route::prefix('productos')->group(function () {
+
+            Route::get('', [ProductoController::class, 'index'])->name('productos.index');
+            Route::post('/datatable', [ProductoController::class, 'datatable']);
+            Route::post('/store-process', [ProductoController::class, 'store']);
+            Route::get('/show/{ficha}', [ProductoController::class, 'show']);
+            Route::put('/update-process', [ProductoController::class, 'update']);
 
         });
 

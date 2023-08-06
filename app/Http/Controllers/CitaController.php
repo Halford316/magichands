@@ -39,8 +39,7 @@ class CitaController extends Controller
             $json_response[] = array(
                 "id" => $id,
                 "paciente" => $ficha->paciente->nombres.' '.$ficha->paciente->ape_paterno.' '.$ficha->paciente->ape_materno,
-                "fecha" => Date::parse($ficha->fecha)->format('d/m/Y'),
-                "hora" => $ficha->horario->hora,
+                "fecha" => Date::parse($ficha->start_date)->format('d/m/Y H:i'),
                 "podologo" => $ficha->podologa->nombres.' '.$ficha->podologa->ape_paterno.' '.$ficha->podologa->ape_materno,
                 "consultorio" => $ficha->consultorio->nombre,
                 "estado" => $muestra_status,
@@ -74,8 +73,10 @@ class CitaController extends Controller
     {
         $data = request()->all();
 
-        $verifica = Cita::where('fecha', $data['fecha'])
-                        ->where('hora_id', $data['hora_id'])
+        $start_date = formatDatetime($data['start_date']);
+
+        $verifica = Cita::where('start_date', $start_date)
+                        //->where('hora_id', $data['hora_id'])
                         ->where('consultorio_id', $data['consultorio_id'])
                         ->where('podologa_id', $data['podologa_id'])
                         ->count();
@@ -83,7 +84,18 @@ class CitaController extends Controller
         if ($verifica > 0) {
             return response()->json(['valid'=>'existe']);
         }else {
-            $ficha = Cita::create($data);
+            //$ficha = Cita::create($data);
+            $ficha = Cita::create([
+                'start_date' => $start_date,
+                'tipo_servicio' => $data['tipo_servicio'],
+                'motivo_consulta' => $data['motivo_consulta'],
+                'tipo_cita' => $data['tipo_cita'],
+                'paciente_id' => $data['paciente_id'],
+                'consultorio_id' => $data['consultorio_id'],
+                'podologa_id' => $data['podologa_id']
+            ]);
+            //$ficha->start_date = $start_date;
+            //$ficha->save();
 
             if ($ficha) {
                 return response()->json(['valid'=>'stored']);
@@ -115,8 +127,7 @@ class CitaController extends Controller
 
         $ficha =  Cita::find($data['ec_ficha_id']);
 
-        $ficha->fecha = $data['ec_fecha'];
-        $ficha->hora_id = $data['ec_hora_id'];
+        $ficha->start_date = $data['ec_start_date'];
         $ficha->consultorio_id = $data['ec_consultorio_id'];
         $ficha->podologa_id = $data['ec_podologa_id'];
         $ficha->tipo_servicio = $data['ec_tipo_servicio'];
@@ -142,8 +153,8 @@ class CitaController extends Controller
             $podologa = $cita->podologa->nombres.' '.$cita->podologa->ape_paterno;
             $events[] = [
                 'title' => $cita->consultorio->nombre.' - '.$podologa,
-                'start' => $cita->fecha,
-                'end' => $cita->fecha,
+                'start' => $cita->start_date,
+                'end' => $cita->end_date,
             ];
         }
         //return view('admin.citas.calendario', compact($events));

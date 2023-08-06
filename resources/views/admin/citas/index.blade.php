@@ -24,8 +24,7 @@
             <tr class="text-center">
                 <th>ID</th>
                 <th>Paciente</th>
-                <th>Fecha</th>
-                <th>Hora</th>
+                <th>Fecha / Hora</th>
                 <th>Podólogo(a)</th>
                 <th>Consultorio</th>
                 <th>Estado</th>
@@ -74,7 +73,7 @@
                 },
             "columnDefs": [
                 {
-                    className: "text-center", "targets": [0,4,5,6,7,8]
+                    className: "text-center", "targets": [0,4,5,6,7]
                 }
             ],
             "aaSorting": [[ 6, "desc" ]],
@@ -86,7 +85,6 @@
                 { data: 'id' },
                 { data: 'paciente' },
                 { data: 'fecha' },
-                { data: 'hora' },
                 { data: 'podologo' },
                 { data: 'consultorio' },
                 { data: 'estado' },

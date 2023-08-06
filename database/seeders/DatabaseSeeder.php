@@ -15,12 +15,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        //$this->call(EnfermedadSeeder::class);
-        //$this->call(PatologiaUnaSeeder::class);
-        //$this->call(PatologiaPielSeeder::class);
-        //$this->call(DeformidadDedoSeeder::class);
-        //$this->call(LocalSeeder::class);
-        //$this->call(ConsultorioSeeder::class);
+        $this->call(PatologiaUnaSeeder::class);
+        $this->call(PatologiaPielSeeder::class);
+        $this->call(EnfermedadSeeder::class);
+        $this->call(DeformidadDedoSeeder::class);
+        $this->call(LocalSeeder::class);
+        $this->call(ConsultorioSeeder::class);
         $this->call(CitaHorarioSeeder::class);
     }
 }

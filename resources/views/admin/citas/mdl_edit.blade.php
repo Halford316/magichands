@@ -47,16 +47,16 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-3">
-                                <label for="ec_fecha">Fecha</label>
-                                <input type="date" name="ec_fecha" id="ec_fecha" class="form-control" required>
+                                <label for="ec_start_date">Fecha / Hora</label>
+                                <input type="text" name="ec_start_date" id="ec_start_date" class="form-control" required>
                             </div>
 
-                            <div class="col-sm-2">
+                            {{--<div class="col-sm-2">
                                 <label for="ec_hora_id">Hora</label>
                                 <select name="ec_hora_id" id="ec_hora_id" class="form-control" required>
                                     <option value="">-- Seleccione --</option>
                                 </select>
-                            </div>
+                            </div>--}}
 
                             <div class="col-sm-2">
                                 <label for="ec_consultorio_id">Consultorio</label>

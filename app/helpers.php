@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Carbon;
+
 function getSexos()
 {
     $array = array(
@@ -31,6 +33,17 @@ function getStatusClass()
     );
 
     return $array;
+}
+
+function formatDatetime($inputDate)
+{
+    // Convertir la cadena en un objeto DateTime usando Carbon
+    $dateTime = Carbon::createFromFormat('d-m-Y H:i', $inputDate);
+
+    // Formatear la fecha y hora en el formato deseado (yyyy-mm-dd H:i:s)
+    $formattedDateTime = $dateTime->format('Y-m-d H:i:s');
+
+    return $formattedDateTime;
 }
 
 ?>
